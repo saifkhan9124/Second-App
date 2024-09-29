@@ -9,8 +9,9 @@ export const ColorModeSwitcher = props => {
 
   return (
     <IconButton
-      variant="ghost"
-      color="current"
+      variant="black"
+      color="white"
+      bgColor={'purple'}
       pos={'fixed'}
       top={'4'}
       right={'4'}
