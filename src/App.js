@@ -3,11 +3,12 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Video from './components/Video';
 import Footer from './components/Footer';
-import Upload from './components/upload';
+import Upload from './components/Upload';
 
 function App() {
   return (
     <Router>
+      <Header />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
