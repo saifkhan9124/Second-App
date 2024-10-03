@@ -8,16 +8,15 @@ import img2 from '../assets/2.jpg';
 import img3 from '../assets/3.jpg';
 import img4 from '../assets/4.jpg';
 import img5 from '../assets/5.png';
-import { transform } from 'framer-motion';
 
 const headingOption = {
   pos: 'absolute',
   left: '50%',
   top: '50%',
-  transform: 'translate(-50%,-50%)',
-  textTransfrom: 'uppercase',
-  p: '4',
-  size: '4xl',
+  transform: 'translate(-50%, -50%)',
+  textTransform: 'uppercase',
+  p: 4,
+  fontSize: { base: 'xl', md: '4xl' },
 };
 
 const Home = () => {
@@ -25,13 +24,13 @@ const Home = () => {
     <Box>
       <MyCarousel />
 
-      <Container minH={'100vh'} maxW={'Container.xl'} p="16">
+      <Container minH={'100vh'} maxW={'container.xl'} p="16">
         <Heading
           textTransform={'uppercase'}
           py={'2'}
-          w={' fit-content'}
+          w={'fit-content'}
           borderBottom={'2px solid '}
-          m={'Auto'}
+          m={'auto'} // Changed to 'auto' for centering
         >
           Service
         </Heading>
@@ -40,15 +39,21 @@ const Home = () => {
           h="full"
           p={'4'}
           alignItems={'center'}
-          direction={['column', 'row']}
+          direction={['column', 'row']} // Responsive stacking for column on small screens, row on larger
         >
-          <Image src={img5} filter={'hue-rotate(-130deg)'} h={['40', '400']} />
+          <Image
+            src={img5}
+            filter={'hue-rotate(-130deg)'}
+            h={['40', '400']} // Responsive height for the image
+            w={['80%', '400px']} // Responsive width adjustment for better mobile view
+            objectFit="contain"
+          />
 
           <Text
             letterSpacing={'widest'}
             lineHeight={'190%'}
             p={['4', '16']}
-            textAlign={'center'}
+            textAlign={'center'} // Center aligned text for better readability
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Voluptatibus tenetur aspernatur tempora, cupiditate illum dolor
@@ -68,6 +73,7 @@ const Home = () => {
     </Box>
   );
 };
+
 const MyCarousel = () => {
   return (
     <>
@@ -79,32 +85,55 @@ const MyCarousel = () => {
         showThumbs={false}
         showArrows={false}
       >
-        <Box w={'full'} h={'100vh'}>
-          <Image src={img1} />
-          <Heading bg={'blackAlpha.600'} color={'white'} {...headingOption}>
-            Watch The Fature
+        <Box w="full" h={{ base: '60vh', md: '100vh' }}>
+          <Image src={img1} w="full" h="full" objectFit="cover" />
+          <Heading
+            bg="blackAlpha.600"
+            color="white"
+            {...headingOption}
+            w="full"
+            textAlign="center"
+          >
+            Watch The Future
           </Heading>
         </Box>
-        <Box w={'full'} h={'100vh'}>
-          <Image src={img2} />
-          <Heading bg={'whiteAlpha.600'} color={'black'} {...headingOption}>
-            Watch The Fature
+        <Box w="full" h={{ base: '60vh', md: '100vh' }}>
+          <Image src={img2} w="full" h="full" objectFit="cover" />
+          <Heading
+            bg="whiteAlpha.600"
+            color="black"
+            {...headingOption}
+            w="full"
+            textAlign="center"
+          >
+            Watch The Future
           </Heading>
         </Box>
-        <Box w={'full'} h={'100vh'}>
-          <Image src={img3} />
-          <Heading bg={'blackAlpha.600'} color={'white'} {...headingOption}>
-            Watch The Fature
+        <Box w="full" h={{ base: '60vh', md: '100vh' }}>
+          <Image src={img3} w="full" h="full" objectFit="cover" />
+          <Heading
+            bg="blackAlpha.600"
+            color="white"
+            {...headingOption}
+            w="full"
+            textAlign="center"
+          >
+            Watch The Future
           </Heading>
         </Box>
-        <Box w={'full'} h={'100vh'}>
-          <Image src={img4} />
-          <Heading bg={'blackAlpha.600'} color={'white'} {...headingOption}>
-            Watch The Fature
+        <Box w="full" h={{ base: '60vh', md: '100vh' }}>
+          <Image src={img4} w="full" h="full" objectFit="cover" />
+          <Heading
+            bg="blackAlpha.600"
+            color="white"
+            {...headingOption}
+            w="full"
+            textAlign="center"
+          >
+            Watch The Future
           </Heading>
         </Box>
       </Carousel>
-      ;
     </>
   );
 };
