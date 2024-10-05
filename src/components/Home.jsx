@@ -51,7 +51,7 @@ const Home = () => {
 
           <Text
             letterSpacing={'widest'}
-            lineHeight={'190%'}
+            lineHeight={['130%', '190%']}
             p={['4', '16']}
             textAlign={'center'} // Center aligned text for better readability
           >
@@ -98,7 +98,7 @@ const MyCarousel = () => {
           </Heading>
         </Box>
         <Box w="full" h={{ base: '60vh', md: '100vh' }}>
-          <Image src={img2} w="full" h="full" objectFit="cover" />
+          <Image src={img2} w={'full'} h={'full'} objectFit={'cover'} />
           <Heading
             bg="whiteAlpha.600"
             color="black"
